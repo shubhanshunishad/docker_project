@@ -1,0 +1,31 @@
+step 1 : Install apache2
+
+sudo apt-get update
+sudo apt-get install apache2
+
+step 2 : Install phpmyadmin
+
+sudo apt-get install php libapache2-mod-php
+sudo systemctl restart apache2
+
+step 3 : Install Mysql Server & its dependencies 
+
+
+sudo apt-get install mysql-server
+sudo apt-get install phpmyadmin php-mbstring php-gettext
+sudo chown ubuntu /var/www/html 
+exit
+
+install ssh certificate ------------------
+
+
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+ sudo apt-get install python-certbot-apache
+sudo certbot --apache -d metaeducators.com
+
+Encounter error --------------------------
+
+sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+sudo a2enconf phpmyadmin.conf 
+sudo systemctl restart apache2 

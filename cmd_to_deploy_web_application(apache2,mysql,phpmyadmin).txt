@@ -1,0 +1,17 @@
+step 1 : Install apache2
+
+sudo apt-get update
+sudo apt-get install apache2
+
+step 2 : Install phpmyadmin
+
+sudo apt-get install php libapache2-mod-php
+sudo systemctl restart apache2
+
+step 3 : Install Mysql Server & its dependencies 
+
+
+sudo apt-get install mysql-server
+sudo apt-get install phpmyadmin php-mbstring php-gettext
+sudo chown ubuntu /var/www/html 
+exit
